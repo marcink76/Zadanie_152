@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj wydatek</title>
+</head>
+<body>
+<form method="get" action="unit/addunit">
+    <input type="text" name="name">
+    <input type="number" name="price">
+    <select name="cathegory">
+        <option value="food">żywność</option>
+        <option value="cloth">odzież</option>
+    </select>
+    <input type="submit" value="Wyslij"><br>
+
+</form>
+
+<form method="get" action="unit/showall">
+    <input type="submit" value="pokaz wszystko">
+</form>
+
+<form method="get" action="unit/sorting">
+    <select name="cathegory">
+        <option value="food">żywność</option>
+        <option value="cloth">odzież</option>
+    </select>
+    <input type="submit" value="sortuj">
+</form>
+</body>
+</html>

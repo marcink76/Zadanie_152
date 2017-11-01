@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Wprowadz wydatek</title>
+</head>
+<body>
+<form action="#" th:action="@{/unit/addunit}" method="get" th:object="${unit}">
+    Nazwa: <input type="text" th:field="*{name}"/> <br/>
+    Cena: <input type="number" th:field="*{price}"/> <br/>
+    Kategoria: <select th:field="*{cathegory}">
+    <option value="food">żywność</option>
+    <option value="cloth">odzież</option>
+</select>
+    <input type="submit" value="Dodaj"/>
+</form>
+<form action="#" th:action="@{/}" method="get">
+    <button type="submit">Powrót</button>
+</form>
+</body>
+</html>
