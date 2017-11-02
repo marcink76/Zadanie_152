@@ -8,6 +8,8 @@ import pl.zadanie151.zadanie151.repositories.UnitRepository;
 import pl.zadanie151.zadanie151.model.Unit;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
 
 @Controller
@@ -76,6 +78,25 @@ public class UnitController {
             }
         }
         result.append("<br> Całkowite wydatki: " + totalPrice);
+        return result.toString();
+    }
+
+    @RequestMapping("/sortingprice")
+    @ResponseBody
+    public String sortingValue(@RequestParam String direction) {
+        List<Unit> allUnits = unitRepository.getAllUnits();
+        StringBuilder result = new StringBuilder();
+
+        if (direction.equals("up")) {
+            allUnits.sort(Comparator.comparing(Unit::getPrice));
+
+        } else if (direction.equals("down")) {
+            allUnits.sort(Comparator.comparing(Unit::getPrice).reversed());
+        }
+
+        for (Unit allUnit : allUnits) {
+            result.append(allUnit.toString()).append("<br>");
+        }
         return result.toString();
     }
 

@@ -19,5 +19,10 @@
     </select>
     <button type="submit" value="sort">Wyświetl kategorię</button>
 </form>
+<form th:action="@{/unit/sortingprice}" method="get">
+        <input type="radio" name="direction" value="up">rosnąco</input>
+        <input type="radio" name="direction" value="down">malejąco</input>
+    <button type="submit" value="sort">sortuj po cenie</button>
+</form>
 </body>
 </html>
