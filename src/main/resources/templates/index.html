@@ -6,20 +6,20 @@
 </head>
 <body>
 <p th:text=" ${tekstMessage}"></p>
-<form th:action="@{/unit/addunit}" method="get">
+<form th:action="@{/addunit}" method="get">
     <button>dodaj</button>
 </form>
-<form th:action="@{/unit/showall}" method="get">
+<form th:action="@{/showall}" method="get">
     <button name="pokaz" value="pokaz">pokaz</button>
 </form>
-<form th:action="@{/unit/sorting}" method="get">
+<form th:action="@{/sorting}" method="get">
     <select name="cathegory">
         <option value="food">żywność</option>
         <option value="cloth">odzież</option>
     </select>
     <button type="submit" value="sort">Wyświetl kategorię</button>
 </form>
-<form th:action="@{/unit/sortingprice}" method="get">
+<form th:action="@{/sortingprice}" method="get">
         <input type="radio" name="direction" value="up">rosnąco</input>
         <input type="radio" name="direction" value="down">malejąco</input>
     <button type="submit" value="sort">sortuj po cenie</button>

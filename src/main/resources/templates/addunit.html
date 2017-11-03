@@ -5,7 +5,7 @@
     <title>Wprowadz wydatek</title>
 </head>
 <body>
-<form action="#" th:action="@{/unit/addunit}" method="get" th:object="${unit}">
+<form action="#" th:action="@{/addunit}" method="get" th:object="${unit}">
     Nazwa: <input type="text" th:field="*{name}"/> <br/>
     Cena: <input type="number" th:field="*{price}"/> <br/>
     Kategoria: <select th:field="*{cathegory}">

@@ -7,13 +7,11 @@ import org.springframework.web.bind.annotation.*;
 import pl.zadanie151.zadanie151.repositories.UnitRepository;
 import pl.zadanie151.zadanie151.model.Unit;
 
-import javax.servlet.http.HttpServletRequest;
-import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
 @Controller
-@RequestMapping("unit")
+//@GetMapping("/unit")
 public class UnitController {
 
     private UnitRepository unitRepository;
@@ -25,7 +23,8 @@ public class UnitController {
 
     @GetMapping("/addunit")
     public String addProductForm(Model model) {
-        model.addAttribute("unit", new Unit("Koszula", "333", "cloth"));
+        model.addAttribute("unit", new Unit());
+
         return "addunit"; // To nie dziala:
     }
 
@@ -52,7 +51,7 @@ public class UnitController {
 
     }
     */
-    @RequestMapping("/showall")
+    @GetMapping("/showall")
     @ResponseBody
     public String showAll() {
         List<Unit> allUnits = unitRepository.getAllUnits();
@@ -62,8 +61,7 @@ public class UnitController {
         }
         return result.toString();
     }
-
-    @RequestMapping("/sorting")
+    @GetMapping("/sorting")
     @ResponseBody
     public String sorting(@RequestParam String cathegory) {
         List<Unit> allUnits = unitRepository.getAllUnits();
@@ -80,8 +78,7 @@ public class UnitController {
         result.append("<br> Całkowite wydatki: " + totalPrice);
         return result.toString();
     }
-
-    @RequestMapping("/sortingprice")
+    @GetMapping("/sortingprice")
     @ResponseBody
     public String sortingValue(@RequestParam String direction) {
         List<Unit> allUnits = unitRepository.getAllUnits();
@@ -100,8 +97,6 @@ public class UnitController {
         return result.toString();
     }
 
-
-    @RequestMapping(value = "/addunitform")
 
     public String addUnitPost() {
         System.out.println("Test");

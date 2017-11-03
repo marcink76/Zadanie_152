@@ -11,6 +11,9 @@ public class Unit {
         this.cathegory = cathegory;
     }
 
+    public Unit() {
+    }
+
     public String getName() {
         return name;
     }
